@@ -1,8 +1,9 @@
+""" The linregpy module provides a simple way to creating
+linear regression models, with a wrapper API to matplotlib
+for plotting the regressions and their scatter-plots 
+painlessly.
 """
-The QuadGradDescent library aims to provide a simple implementation
-of quadratic minimization using gradient descent and a full 
-implementation of linear regression.
-"""
+
 
 # necessary imports, make sure you have matplotlib and numpy installed
 from math import ceil, sqrt
@@ -15,73 +16,6 @@ from dataclasses import dataclass
 
 # global variables
 _plots = [] # stores the plots that have been requested to be drawn
-
-
-class Quadratic:
-    """ A class representing a quadratic function of the form
-    f(x) = ax^2 + bx + c
-        
-    Attributes
-    ----------
-    a : float
-            the second power term's coefficient
-    b : float
-        the first power term's coefficient
-    c : float
-        the constant
-        
-    Methods
-    -------
-    eval(x)
-        returns the value of this quadratic at a given value
-    toString()
-        returns a string representation of this quadratic
-    """
-
-    def __init__(self, a: float, b: float, c: float) -> None:
-        self._a = a
-        self._b = b
-        self._c = c
-    
-    
-    def eval(self, x: float) -> float:
-        """ Evaluates this Quadratic at a given value
-        
-        Parameters
-        ----------
-        x : float 
-            the x-value this function is to be evaluated at
-        
-        Returns
-        -------
-        float
-            the value of this function at a given input
-        """
-        return (self._a * (x**2)) + (self._b * x) + self._c
-    
-    
-    def toString(self) -> str:
-        """ Returns a string representation of this Quadratic.
-        """
-        firstTerm = ""
-        if(self._a != 0):
-            firstTerm = "x^2" if(self._a == 1) else f"{self._a}x^2"
-            
-        secondTerm = ""
-        if(self._b != 0):
-            secondTerm = "x" if(self._b == 1) else f"{self._b}x"
-            
-        constant = ""
-        if(self._c != 0):
-            constant = str(self._c)
-        
-        # ??? don't know if theres a better way of doing this
-        # this is indeed python so there probably is
-        result = ""
-        result += firstTerm  + " + " if(firstTerm != "") else ""
-        result += secondTerm + " + " if(secondTerm != "") else ""
-        result += constant if(constant != "") else ""
-        return result
         
         
 class LinearRegression:
@@ -335,53 +269,11 @@ def drawPlots() -> None:
     fig.suptitle("Note: Scales are not the same.")
     plt.tight_layout()
     plt.show()
-
-
-def gradDesc(quad: Quadratic, epsilon=.001, alpha=.01) -> float:
-    """ Returns the x-value of the local minimum of a given
-    function using gradient descent.
-    
-    Parameters
-    ----------    
-    quad : Quadratic
-        the function being minimized
-    epsilon : float, optional 
-        the maximum permitted error when deciding when to stop iterating (default .001)
-    alpha : float, optional
-        the bound size used to approximate slope; I.E. the step size. (default .01)
-        
-    Returns
-    -------
-    float
-        the approximate x-value at which the minimum of the given quadratic occurs
-    """
-    # The default values for epsilon and alpha seem to work pretty well, but other
-    # combinations of values may also work.
-    xVal = quad._b # pick arbitrary value to start at
-    while(True):
-        # Check slope to left and right of xVal.
-        # Change xVal by a scaled amount depending on slope steepness.
-        currMin = quad.eval(xVal)
-        left  = abs(currMin - quad.eval(xVal - alpha))
-        right = abs(currMin - quad.eval(xVal + alpha))
-        if(left < right):
-            currSlope = left
-            xVal -= currSlope * alpha
-        else:
-            currSlope = right
-            xVal += currSlope * alpha
-        
-        # emulating do-while functionality
-        if(currSlope < epsilon):
-            break
-        
-    return xVal
     
     
-# Mostly testing code here.
+# Nothing to see here. For now.
 def __main():
-    poly = Quadratic(50., 10., 1.)
-    print(f"The local min of {poly.toString()} is at approximately x = {gradDesc(poly)}")
+    print("Hello, linregpy!")
     
 
 # Main is not run if this file is imported as a library.
