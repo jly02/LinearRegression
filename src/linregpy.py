@@ -8,6 +8,7 @@ painlessly.
 # necessary imports, make sure you have matplotlib and numpy installed
 from math import ceil, sqrt
 import sys
+import ctypes
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import List, Tuple
