@@ -1,2 +1,2 @@
-# LinearRegression
+# linregpy
 A small library for creating and plotting linear regression models.
