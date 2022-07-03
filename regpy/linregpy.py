@@ -36,6 +36,9 @@ class LinearRegression:
     """
     
     def __init__(self, x: List[float], y: List[float]) -> None:
+        if len(x) == 0 or len(y) == 0:
+            raise ValueError("axes cannot be empty")
+            
         self._xAxis = x
         self._yAxis = y
         self.beta   = self._calculateBeta()
@@ -94,7 +97,7 @@ class LinearRegression:
             Tuple[float, float]: a tuple of the min/max x-values in the set
         """
         minX = sys.float_info.max
-        maxX = sys.float_info.min
+        maxX = sys.float_info.max * -1
         for x in self._xAxis:
             if(x < minX):
                 minX = x
@@ -113,7 +116,7 @@ class LinearRegression:
             Tuple[float, float]: a tuple of the min/max y-values in the set
         """
         minY = sys.float_info.max
-        maxY = sys.float_info.min
+        maxY = sys.float_info.max * -1
         for y in self._yAxis:
             if(y < minY):
                 minY = y
