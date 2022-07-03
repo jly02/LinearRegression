@@ -16,7 +16,11 @@ print("This is a test")
 Notes
 -----
 Some may have still have issues importing this package after installation, to which I would recommend using a virtual environment:
+
 Install venv using `pip install venv` or `pip3 install venv`
+
 To create a virtual environment, run `python3 -m venv venv`
+
 Activate it with `venv/Scripts/activate` (for Windows) or `./venv/Scripts/activate` (for Linux-based)
+
 Run `pip install -e .` again in the root directory and it should work then. To close the virtual environment just use `deactivate`
