@@ -5,7 +5,6 @@ painlessly.
 """
 
 
-# necessary imports, make sure you have matplotlib and numpy installed
 from math import ceil, sqrt
 import sys
 import ctypes
@@ -43,8 +42,8 @@ class LinearRegression:
         self._yAxis = y
         self.beta   = self._calculateBeta()
         self.inty   = self._calculateIntercept()
-        self.domain = self._calcDomain()
-        self.range  = self._calcRange()
+        self.domain = (min(x), max(x))
+        self.range  = (min(y), max(y))
         self.rSquare = self._calcRSquare()
         self.rSquareAdj = self._calcRSquareAdj()
      
@@ -87,44 +86,6 @@ class LinearRegression:
         yBar = sum(self._yAxis) / len(self._yAxis)
         
         return yBar - (self.beta * xBar)
-    
-    
-    def _calcDomain(self) -> Tuple[float, float]:
-        """ Returns a tuple representing the minimum and maximum
-        x-values in the set.
-
-        Returns:
-            Tuple[float, float]: a tuple of the min/max x-values in the set
-        """
-        minX = sys.float_info.max
-        maxX = sys.float_info.max * -1
-        for x in self._xAxis:
-            if(x < minX):
-                minX = x
-            
-            if(x > maxX):
-                maxX = x
-                
-        return (minX, maxX)
-    
-    
-    def _calcRange(self) -> Tuple[float, float]:
-        """ Returns a tuple representing the minimum and maximum
-        y-values in the set.
-
-        Returns:
-            Tuple[float, float]: a tuple of the min/max y-values in the set
-        """
-        minY = sys.float_info.max
-        maxY = sys.float_info.max * -1
-        for y in self._yAxis:
-            if(y < minY):
-                minY = y
-            
-            if(y > maxY):
-                maxY = y
-                
-        return (minY, maxY)
     
     
     def _calcRSquare(self) -> float:
