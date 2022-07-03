@@ -1,2 +1,2 @@
-# linregpy
-A small library for creating and plotting linear regression models.
+# regpy
+A small library for creating and plotting regression models.
