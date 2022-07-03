@@ -1,5 +1,5 @@
 import unittest
-import linregpy as lrp
+import linregpy
 
 
 class TestLinearRegression(unittest.TestCase):
