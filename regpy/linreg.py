@@ -10,7 +10,7 @@ import sys
 import ctypes
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import List, Tuple
+from typing import List
 from dataclasses import dataclass
 
 
