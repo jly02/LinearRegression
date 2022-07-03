@@ -6,7 +6,6 @@ painlessly.
 
 
 from math import ceil, sqrt
-import sys
 import ctypes
 import numpy as np
 import matplotlib.pyplot as plt
