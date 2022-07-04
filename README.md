@@ -81,4 +81,6 @@ Activate it with `venv/Scripts/activate` (for Windows) or `./venv/Scripts/activa
 
 Run `pip install -e .` again in the root directory and it should work then. To close the virtual environment just use `deactivate`
 
+>regpy provides a set of tests in the `test/` directory to ensure that it doesn't just run on my machine. If all tests pass you can be reasonably confident it will work for your use cases
+
 >This library is written purely in python, so expect performance bottlenecks should you decide to apply this library to large-scale data sets. It is also a WIP, so there may be new types of regressions that are added to the library in the future.
