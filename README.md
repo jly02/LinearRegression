@@ -15,12 +15,14 @@ import regpy.linreg as lrp
 ```
 To ensure that the the module as been correctly imported, run it. If you get a ModuleNotFoundError, refer to the Notes section of this README.
 
+
 To create a linear regression, initialize a LinearRegression object, which requires two lists. The only restriction on these lists is that they cannot be empty.
 ```py
 import regpy.linreg as lrp
 # This should create a linear regression that can be represented as y = x on a graph
 linReg = lrp.LinearRegression([1, 2, 3], [1, 2, 3])
 ```
+
 
 To make a prediction based on the regression line, use the predict() method, which is a member of the LinearRegression class.
 ```py
@@ -31,12 +33,14 @@ print(linReg.predict(0)) # Will print 0.0
 print(linReg.predict(10000)) # Will print 10000.0
 ```
 
+
 You can also access the R-Squared value for the regression using the public fields on a LinearRegression object.
 ```py
 import regpy.linreg as lrp
 linReg = lrp.LinearRegression([1, 2, 3], [1, 2, 3])
 print(f"R^2 = {linReg.rSquare}") # R^2 = 1.0
 ```
+
 
 Finally, printing a LinearRegression will give you the line equation in the form of y = {beta}x + {inty}, both rounded to two decimal places (beta and inty, as well as the domain and range of the dataset, are also freely accessible).
 ```py
