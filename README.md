@@ -77,7 +77,7 @@ Install venv using `pip install venv` or `pip3 install venv`
 
 To create a virtual environment, run `python3 -m venv venv`
 
-Activate it with `venv/Scripts/activate` (for Windows) or `./venv/Scripts/activate` (for Linux-based)
+Activate it with `venv/Scripts/activate` (for Windows) or `source venv/bin/activate` (for Linux-based)
 
 Run `pip install -e .` again in the root directory and it should work then. To close the virtual environment just use `deactivate`
 
