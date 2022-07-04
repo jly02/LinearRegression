@@ -1,7 +1,7 @@
 # regpy
 A small library for creating and plotting regression models.
 
-regpy aims to make it as painless as possible to create and plot regression models, making it a great tool for incredibly rapid development over small datasets or as an educational tool for demonstration.
+regpy aims to make it as painless as possible to create and plot regression models, making it a great tool for incredibly rapid development over small datasets or as an educational tool for demonstrations.
 
 Setup
 -----
